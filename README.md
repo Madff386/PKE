@@ -11,4 +11,8 @@ If you want to download this readme, it is under the application, click on it
 to start your download.
 
 ### Release notes of PKE-v1.1.0:
-  - added copy-paste funconality
+  - added copy-paste funconality  
+  
+If you find any bugs or have any extra features or changes you would like to see 
+implemented, go to the issues tab at the top of this page and create a new one. 
+Add a tag to it to show what it is about, eg: bug, enhancement... and submit it.
