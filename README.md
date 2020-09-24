@@ -1,18 +1,18 @@
 # PKE
 Download platform for the most recent version of the PKE program.
-The PKE program is an encryption and deception program inspired by 
+The PKE program is an encryption and decryption program inspired by 
 the public key encryption protocol.   
   
 To download the latest version, click on the releases tab on the right 
 side of the window or underneath this readme on mobile. Then, scroll until 
 you find the latest release. Under the assets for that release, click the 
 file called PKE-vX.X.X.exe that will start the download for the application. 
-If you want to download this readme, it is under the application, click on it 
+If you want to download the release notes it is under the application, click on it 
 to start your download.
 
 ### Release notes of PKE-v1.1.0:
-  - added copy-paste funconality  
+  - added copy-paste functionality 
   
 If you find any bugs or have any extra features or changes you would like to see 
-implemented, go to the issues tab at the top of this page and create a new one. 
-Add a tag to it to show what it is about, eg: bug, enhancement... and submit it.
+implemented, go to the issues tab at the top of this page and click on the new button to create a new issue. 
+Add a title and a description if you want, then click the submit new issue button at the bottom.
