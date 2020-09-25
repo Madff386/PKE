@@ -1,5 +1,8 @@
 # Release notes:
 
+### v1.1.1
+    Enlarged output text boxes
+    
 ### v1.1.0
     Added copy-paste functionality 
 
