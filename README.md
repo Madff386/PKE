@@ -5,7 +5,7 @@ the public key encryption protocol.
 It is *only* compatible with the 
 latest windows operating system.  
   
-### Release notes of PKE-v1.1.1:
+### Release notes of PKE-v1.2.0:
   - Loops back to welcome screen
   
 
