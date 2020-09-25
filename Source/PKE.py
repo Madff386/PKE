@@ -212,7 +212,7 @@ def decrypt(message):
         
 
 def get_task():
-    task = simpledialog.askstring('Task', 'What do you want to do?')
+    task = simpledialog.askstring('Task', 'What do you want to do?  Type exit to exit.')
     return task
 
 def get_messag():
@@ -223,6 +223,56 @@ def get_message():
     message = simpledialog.askstring('Message', 'Enter what you want to decrypt: ')
     return message
 
+def oken():
+    outen.destroy()
+    loop()
+    
+
+def okde():
+    outde.destroy()
+    loop()
+
+def loop():
+    task = get_task()
+    if task == 'encrypt':
+        messag = get_messag()
+        encrypted = encrypt(messag)
+        global outen
+        outen = Toplevel(root)
+        outen.title('Encrypted')
+        enout = StringVar()
+        labelen = Text(outen, width=20, height=8)
+        labelen.grid(column=0, row=0, sticky=(W, E),  padx=10, pady=10, columnspan=2)
+        encrypted = str(encrypted)
+        encrypted = encrypted.replace(',', '')
+        encrypted = encrypted.replace(']', '')
+        encrypted = encrypted.replace('[', '')
+        labelen.insert(END, '%s' % encrypted)
+        labelen.configure(state="disabled")
+        labelen.configure(wrap="word")
+        ok = ttk.Button(outen, text='Ok', command=oken).grid(column=1, row=2, sticky=(E))
+        exit = ttk.Button(outen, text='Exit', command=root.destroy).grid(column=2, row=2, sticky=(E))
+    elif task == 'decrypt':
+        message = get_message()
+        decrypted = decrypt(message)
+        global outde
+        outde = Toplevel(root)
+        outde.title('Decrypted')
+        deout = StringVar()
+        labelde = Text(outde, width=20, height=8)
+        labelde.grid(column=0, row=0, sticky=(W, E),  padx=10, pady=10)
+        decrypted = str(decrypted)
+        decrypted = decrypted.replace(',', '')
+        decrypted = decrypted.replace(']', '')
+        decrypted = decrypted.replace('[', '')
+        labelde.insert(END, '%s' % decrypted)
+        labelde.configure(state="disabled")
+        labelde.configure(wrap="word")
+        ok = ttk.Button(outen, text='Ok', command=okde).grid(column=1, row=2, sticky=(E))
+        exit = ttk.Button(outen, text='Exit', command=root.destroy).grid(column=2, row=2, sticky=(E))
+    else:
+        root.destroy()
+
 root = Tk()
 root.withdraw()
 d = 9
@@ -230,40 +280,6 @@ e = 9
 p = 5
 q = 11
 
-task = get_task()
-if task == 'encrypt':
-    messag = get_messag()
-    encrypted = encrypt(messag)
-    outen = Toplevel(root)
-    outen.title('Encrypted')
-    enout = StringVar()
-    labelen = Text(outen, width=20, height=8)
-    labelen.grid(column=0, row=0, sticky=(W, E),  padx=10, pady=10)
-    encrypted = str(encrypted)
-    encrypted = encrypted.replace(',', '')
-    encrypted = encrypted.replace(']', '')
-    encrypted = encrypted.replace('[', '')
-    labelen.insert(END, '%s' % encrypted)
-    labelen.configure(state="disabled")
-    labelen.configure(wrap="word")
-    button = ttk.Button(outen, text='Ok', command=root.destroy).grid(column=1, row=2, sticky=(E))
-elif task == 'decrypt':
-    message = get_message()
-    decrypted = decrypt(message)
-    outde = Toplevel(root)
-    outde.title('Decrypted')
-    deout = StringVar()
-    labelde = Text(outde, width=20, height=8)
-    labelde.grid(column=0, row=0, sticky=(W, E),  padx=10, pady=10)
-    decrypted = str(decrypted)
-    decrypted = decrypted.replace(',', '')
-    decrypted = decrypted.replace(']', '')
-    decrypted = decrypted.replace('[', '')
-    labelde.insert(END, '%s' % decrypted)
-    labelde.configure(state="disabled")
-    labelde.configure(wrap="word")
-    button = ttk.Button(outde, text='Ok', command=root.destroy).grid(column=1, row=2, sticky=(E))
-else:
-    root.destroy()
+loop()
     
 root.mainloop()
