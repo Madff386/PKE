@@ -268,8 +268,8 @@ def loop():
         labelde.insert(END, '%s' % decrypted)
         labelde.configure(state="disabled")
         labelde.configure(wrap="word")
-        ok = ttk.Button(outen, text='Ok', command=okde).grid(column=1, row=2, sticky=(E))
-        exit = ttk.Button(outen, text='Exit', command=root.destroy).grid(column=2, row=2, sticky=(E))
+        ok = ttk.Button(outde, text='Ok', command=okde).grid(column=1, row=2, sticky=(E))
+        exit = ttk.Button(outde, text='Exit', command=root.destroy).grid(column=2, row=2, sticky=(E))
     else:
         root.destroy()
 
