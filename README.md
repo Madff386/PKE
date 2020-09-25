@@ -12,8 +12,8 @@ file called PKE-vX.X.X.exe that will start the download for the application.
 If you want to download the release notes it is under the application, click on it 
 to start your download.
 
-### Release notes of PKE-v1.1.0:
-  - added copy-paste functionality 
+### Release notes of PKE-v1.1.1:
+  - enlarged output text boxes 
   
 If you find any bugs or have any extra features or changes you would like to see 
 implemented, go to the issues tab at the top of this page and click on the new button to create a new issue. 
