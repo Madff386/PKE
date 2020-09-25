@@ -6,6 +6,6 @@ It is *only* compatible with the
 latest windows operating system.  
   
 ### Release notes of PKE-v1.1.1:
-  - enlarged output text boxes 
+  - Loops back to welcome screen
   
 
