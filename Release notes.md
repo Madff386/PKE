@@ -1,5 +1,11 @@
 # Release notes:
 
+### v1.2.1
+    Fixed decryption button bug
+
+### v1.2.0
+    Loops back to welcome page
+    
 ### v1.1.1
     Enlarged output text boxes
     
