@@ -30,5 +30,18 @@ the code onto your device. Next extract all the files from the zipped folder
 into a directory that is easily acessable.
 
 
-  
+## Usage:
+### Built version  
+To run the built version of the PKE program, after you have downloaded it double click the 
+file named PKE.exe. 
+### Python version
+To run the source code or the python version, right click the file called PKE.py and select 
+open with. Then from the menu select python 3.
+#### Encrypting
+After you run the program you will be prompted with a text box. To encrypt type encrypt in that 
+text box and press ok. After that a new text box is will appear, in here type what you want to encrypt 
+and press ok. This will create a new window and the encrypted version of the text you entered will appear in 
+the big text box. To go back to the welcome screen, press ok, to exit the program press exit.
+
+
 
