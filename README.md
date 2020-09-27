@@ -1,6 +1,7 @@
 # PKE
 ## Contnets:
 1. [About](#about)
+   1. [Release notes](#release_notes)
 ## About: <a name="about"></a>
 The PKE program is an encryption and decryption program inspired by 
 the public key encryption protocol. It is a fairly weak encryption but 
@@ -9,11 +10,11 @@ can be improved with a higher precision float.
 It is *only* compatible with the 
 latest windows operating system.  
   
-### Release notes of PKE-v1.2.1:  
+### Release notes of PKE-v1.2.1: <a name="release_ notes"></a>
   - Fixed decryption button bug  
 
-## Installation: 
-### Built version
+## Installation: <a name="installation"></a>
+### Built version <a name="built_version"></a>
 To install the built PKE program you will need the latest 
 version of the windows operating system and about 20 - 50Mb 
 aid space on your hard disk. Once you have this, go ahead and 
@@ -23,7 +24,7 @@ this there is a file called PKE.exe. Click on this and your download
 will start. Once it has downloaded move it to somewhere you can easily 
 find.  
 
-### Python version  
+### Python version <a name="python_version"></a>
 To install the python or source version of the PKE program, you will 
 need python 3 installed on your computer and some space left on your hard disk. 
 Once you have this, click on the green download button on the main page, 
