@@ -4,6 +4,7 @@
    1. [Release notes](#release_notes)
 2. [Installation](#installation)
    1. [Built version](#built_version)
+   2. [Python version](#python_version)
 
 ## About: <a name="about"></a>
 The PKE program is an encryption and decryption program inspired by 
@@ -13,7 +14,7 @@ can be improved with a higher precision float.
 It is *only* compatible with the 
 latest windows operating system.  
   
-### Release notes of PKE-v1.2.1: <a name="release_ notes"></a>
+### Release notes of PKE-v1.2.1: <a name="release_notes"></a>
   - Fixed decryption button bug  
 
 ## Installation: <a name="installation"></a>
