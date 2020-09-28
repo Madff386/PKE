@@ -2,6 +2,8 @@
 ## Contnets:
 1. [About](#about)
    1. [Release notes](#release_notes)
+2. [Installation](#installation)
+
 ## About: <a name="about"></a>
 The PKE program is an encryption and decryption program inspired by 
 the public key encryption protocol. It is a fairly weak encryption but 
