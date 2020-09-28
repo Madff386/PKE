@@ -1,5 +1,5 @@
 # PKE
-## Contnets:
+## Contents:
 1. [About](#about)
    1. [Release notes](#release_notes)
 2. [Installation](#installation)
