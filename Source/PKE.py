@@ -1,14 +1,21 @@
+# import all reqired librarys
 from tkinter import *
 from tkinter import simpledialog, messagebox
 from tkinter import ttk
-def encrypt(message):
+import mpmath as mp
+from mpmath import *
+import math
+
+mp.dps = 10000   # set a heigher precision float
+
+def encrypt(message):   # encrypt function
     enmessage = []
-    emessage = []
+    emessage = []     # define lists
     encrypted = []
-    for counter in range(0, len(message)):
+    for counter in range(0, len(message)):   # loop through all element in message
         enmessage.append(message[counter])
     
-    for cc in enmessage:
+    for cc in enmessage:     # replace all characters with corosponding numbers
         if cc == 'a':
             emessage.append(13)
         elif cc == 'b':
@@ -93,32 +100,149 @@ def encrypt(message):
             emessage.append(43)
         elif cc == '?':
             emessage.append(44)
+        elif cc == 'A':
+            emessage.append(45)
+        elif cc == 'B':
+            emessage.append(46)
+        elif cc == 'C':
+            emessage.append(47)
+        elif cc == 'D':
+            emessage.append(48)
+        elif cc == 'E':
+            emessage.append(49)
+        elif cc == 'F':
+            emessage.append(50)
+        elif cc == 'G':
+            emessage.append(51)
+        elif cc == 'H':
+            emessage.append(52)
+        elif cc == 'I':
+            emessage.append(53)
+        elif cc == 'J':
+            emessage.append(54)
+        elif cc == 'K':
+            emessage.append(55)
+        elif cc == 'L':
+            emessage.append(56)
+        elif cc == 'M':
+            emessage.append(57)
+        elif cc == 'N':
+            emessage.append(58)
+        elif cc == 'O':
+            emessage.append(59)
+        elif cc == 'P':
+            emessage.append(60)
+        elif cc == 'Q':
+            emessage.append(61)
+        elif cc == 'R':
+            emessage.append(62)
+        elif cc == 'S':
+            emessage.append(63)
+        elif cc == 'T':
+            emessage.append(64)
+        elif cc == 'U':
+            emessage.append(65)
+        elif cc == 'V':
+            emessage.append(66)
+        elif cc == 'W':
+            emessage.append(67)
+        elif cc == 'X':
+            emessage.append(68)
+        elif cc == 'Y':
+            emessage.append(69)
+        elif cc == 'Z':
+            emessage.append(70)
+        elif cc == '@':
+            emessage.append(71)
+        elif cc == '#':
+            emessage.append(72)
+        elif cc == '$':
+            emessage.append(73)
+        elif cc == '%':
+            emessage.append(74)
+        elif cc == '^':
+            emessage.append(75)
+        elif cc == '&':
+            emessage.append(76)
+        elif cc == '*':
+            emessage.append(77)
+        elif cc == '(':
+            emessage.append(78)
+        elif cc == ')':
+            emessage.append(79)
+        elif cc == '-':
+            emessage.append(80)
+        elif cc == '_':
+            emessage.append(81)
+        elif cc == '=':
+            emessage.append(82)
+        elif cc == '+':
+            emessage.append(83)
+        elif cc == '{':
+            emessage.append(84)
+        elif cc == '}':
+            emessage.append(85)
+        elif cc == '|':
+            emessage.append(87)
+        elif cc == ';':
+            emessage.append(88)
+        elif cc == '"':
+            emessage.append(89)
+        elif cc == '\'':
+            emessage.append(90)
+        elif cc == '>':
+            emessage.append(91)
+        elif cc == '<':
+            emessage.append(92)
+        elif cc == '/':
+            emessage.append(93)
+        
 
-    for thing in emessage:
-        quotent = (thing**e)/(p*q)
-        round_quotent = round(quotent)
-        if round_quotent > quotent:
-            round_quotent = round_quotent-1
-        encrypted_char = round((quotent - round_quotent)*(p*q))
-        encrypted.append(encrypted_char)
-    return encrypted
+        
+    for thing in emessage:    
+        sep = '.'
+        quotent = (thing**e)/(p*q)   # compute quotent
+        rquotent = str(quotent)
+        r = rquotent.split(sep, 1)[1]   #[
+        r = ("0." + r)
+        r = mpf(r)                      
+        t = float(r)*(p*q)
+        t = t*100000
+        t = str(t)
+        t = t.split(sep, 1)[0] 
+        t = float(t)
+        t = t/100000
+        encrypted_char = round(t)        #] compute remainder
+        encrypted.append(encrypted_char)   # combine to new list
+    return encrypted    # returns encrypted list
 
 
-def decrypt(message):
+def decrypt(message):   # decrypt function
+    message = str(message)
     demessage = []
-    dmessage = []
+    dmessage = []      
     decrypted = []
     data = message.split()
     for temp in data:
-        temp = int(temp)
+        temp = int(temp)         # splits message into listw
         demessage.append(temp)
     for thing in demessage:
-        quotent = (thing**d)/(p*q)
-        round_quotent = round(quotent)
-        if round_quotent > quotent:
-            round_quotent = round_quotent-1
-        decrypted_char = round((quotent - round_quotent)*(p*q))
-        dmessage.append(decrypted_char)
+        sep = '.'
+        quotent = (thing**d)/(p*q)   #[
+        rquotent = str(quotent)
+        r = rquotent.split(sep, 1)[1]
+        r = ("0." + r)
+        r = mpf(r)
+        t = float(r)*(p*q)
+        t = t*100000
+        t = str(t)
+        t = t.split(sep, 1)[0]
+        t = float(t)
+        t = t/100000
+        decrypted_char = round(t)       #] computes remaider
+        dmessage.append(decrypted_char)  # puts in list
+
+        # replaces number with corosponding character
     for cc in dmessage:
         if cc == 3:
             decrypted.append('1')
@@ -197,89 +321,189 @@ def decrypt(message):
         if cc == 40:
             decrypted.append('.')
         if cc == 41:
-            decrypted.append(',')
+            decrypted.append('~')
         if cc == 42:
             decrypted.append(':')
         if cc == 43:
             decrypted.append('!')
         if cc == 44:
             decrypted.append('?')
-
-    plaintext = ''.join(decrypted)       
+        if cc == 45:
+            decrypted.append('A')
+        if cc == 46:
+            decrypted.append('B')
+        if cc == 47:
+            decrypted.append('C')
+        if cc == 48:
+            decrypted.append('D')
+        if cc == 49:
+            decrypted.append('E')
+        if cc == 50:
+            decrypted.append('F')
+        if cc == 51:
+            decrypted.append('G')
+        if cc == 52:
+            decrypted.append('H')
+        if cc == 53:
+            decrypted.append('I')
+        if cc == 54:
+            decrypted.append('J')
+        if cc == 55:
+            decrypted.append('K')
+        if cc == 56:
+            decrypted.append('L')
+        if cc == 57:
+            decrypted.append('M')
+        if cc == 58:
+            decrypted.append('N')
+        if cc == 59:
+            decrypted.append('O')
+        if cc == 60:
+            decrypted.append('P')
+        if cc == 61:
+            decrypted.append('Q')
+        if cc == 62:
+            decrypted.append('R')
+        if cc == 63:
+            decrypted.append('S')
+        if cc == 64:
+            decrypted.append('T')
+        if cc == 65:
+            decrypted.append('U')
+        if cc == 66:
+            decrypted.append('V')
+        if cc == 67:
+            decrypted.append('W')
+        if cc == 68:
+            decrypted.append('X')
+        if cc == 69:
+            decrypted.append('Y')
+        if cc == 70:
+            decrypted.append('Z')
+        if cc == 71:
+            decrypted.append('@')
+        if cc == 72:
+            decrypted.append('#')
+        if cc == 73:
+            decrypted.append('$')
+        if cc == 74:
+            decrypted.append('%')
+        if cc == 75:
+            decrypted.append('^')
+        if cc == 76:
+            decrypted.append('&')
+        if cc == 77:
+            decrypted.append('*')
+        if cc == 78:
+            decrypted.append('(')
+        if cc == 79:
+            decrypted.append(')')
+        if cc == 80:
+            decrypted.append('-')
+        if cc == 81:
+            decrypted.append('_')
+        if cc == 82:
+            decrypted.append('=')
+        if cc == 83:
+            decrypted.append('+')
+        if cc == 84:
+            decrypted.append('{')
+        if cc == 85:
+            decrypted.append('}')
+        if cc == 87:
+            decrypted.append('|')
+        if cc == 88:
+            decrypted.append(';')
+        if cc == 89:
+            decrypted.append('"')
+        if cc == 90:
+            decrypted.append('\'')
+        if cc == 91:
+            decrypted.append('>')
+        if cc == 92:
+            decrypted.append('<')
+        if cc == 93:
+            decrypted.append('/')
+         
+    plaintext = ''.join(decrypted)       # returns decrypted message as string
     return plaintext
     
     
         
 
 def get_task():
-    task = simpledialog.askstring('Task', 'What do you want to do?  Type exit to exit.')
+    task = simpledialog.askstring('Task', 'Type encrypt, decrypt or exit') # creates dialog box
     return task
 
 def get_messag():
-    messag = simpledialog.askstring('Message', 'Enter what you want to encrypt: ')
+    messag = simpledialog.askstring('Encrypt', 'Enter what you want to encrypt: ')  # creates dialog box
     return messag
 
 def get_message():
-    message = simpledialog.askstring('Message', 'Enter what you want to decrypt: ')
+    message = simpledialog.askstring('Decrypt', 'Enter what you want to decrypt: ')  # creates dialog box
     return message
 
 def oken():
-    outen.destroy()
+    outen.destroy()  # destroys widow when button is press while encrypting
     loop()
     
 
 def okde():
-    outde.destroy()
+    outde.destroy()  # destroys widow when button is press while decrypting
     loop()
 
-def loop():
+
+
+
+def loop():   # main loop
     task = get_task()
-    if task == 'encrypt':
+    if task == 'encrypt':  # when encrypting
         messag = get_messag()
-        encrypted = encrypt(messag)
+        encrypted = encrypt(messag)   # get message
         global outen
-        outen = Toplevel(root)
+        outen = Toplevel(root)  # create window
         outen.title('Encrypted')
         enout = StringVar()
         labelen = Text(outen, width=20, height=8)
-        labelen.grid(column=0, row=0, sticky=(W, E),  padx=10, pady=10, columnspan=2)
+        labelen.grid(column=0, row=0, sticky=(W, E),  padx=10, pady=10, columnspan=2)   # create lable
         encrypted = str(encrypted)
         encrypted = encrypted.replace(',', '')
-        encrypted = encrypted.replace(']', '')
+        encrypted = encrypted.replace(']', '')   # make readable
         encrypted = encrypted.replace('[', '')
         labelen.insert(END, '%s' % encrypted)
         labelen.configure(state="disabled")
         labelen.configure(wrap="word")
         ok = ttk.Button(outen, text='Ok', command=oken).grid(column=1, row=2, sticky=(E))
-        exit = ttk.Button(outen, text='Exit', command=root.destroy).grid(column=2, row=2, sticky=(E))
-    elif task == 'decrypt':
+        exit = ttk.Button(outen, text='Exit', command=root.destroy).grid(column=2, row=2, sticky=(E))   # create buttons
+    
+    elif task == 'decrypt':  # when decrypting
         message = get_message()
-        decrypted = decrypt(message)
+        decrypted = decrypt(message)  # get message
         global outde
-        outde = Toplevel(root)
+        outde = Toplevel(root)   # create window
         outde.title('Decrypted')
         deout = StringVar()
         labelde = Text(outde, width=20, height=8)
-        labelde.grid(column=0, row=0, sticky=(W, E),  padx=10, pady=10)
+        labelde.grid(column=0, row=0, sticky=(W, E),  padx=10, pady=10)  # create text box
         decrypted = str(decrypted)
         decrypted = decrypted.replace(',', '')
-        decrypted = decrypted.replace(']', '')
+        decrypted = decrypted.replace('~', ',')
+        decrypted = decrypted.replace(']', '')    # remove list characters
         decrypted = decrypted.replace('[', '')
         labelde.insert(END, '%s' % decrypted)
-        labelde.configure(state="disabled")
+        labelde.configure(state="disabled")   # display ouptut
         labelde.configure(wrap="word")
         ok = ttk.Button(outde, text='Ok', command=okde).grid(column=1, row=2, sticky=(E))
-        exit = ttk.Button(outde, text='Exit', command=root.destroy).grid(column=2, row=2, sticky=(E))
+        exit = ttk.Button(outde, text='Exit', command=root.destroy).grid(column=2, row=2, sticky=(E))  #c create buttons
     else:
-        root.destroy()
+        root.destroy()  # terminate program
 
 root = Tk()
 root.withdraw()
-d = 9
-e = 9
-p = 5
-q = 11
-
+d = mpf(851)
+e = mpf(11)    # set keys for encryption and decryption
+p = mpf(53)
+q = mpf(61)
 loop()
     
-root.mainloop()
+root.mainloop()  
