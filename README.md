@@ -29,8 +29,8 @@ latest windows operating system.
 ## Installation: <a name="installation"></a>
 ### Built version <a name="built_version"></a>
 To install the built PKE program you will need the latest 
-version of the windows operating system and about 20 - 50Mb 
-aid space on your hard disk. Once you have this, go ahead and 
+version of the windows operating system and about 250Mb 
+of space on your hard disk. Once you have this, go ahead and 
 go to the versions tab on the right hand side of the screen. 
 under the latest release there is a space called asssests, under 
 this there is a file called PKE.exe. Click on this and your download 
