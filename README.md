@@ -19,8 +19,12 @@ can be improved with a higher precision float.
 It is *only* compatible with the 
 latest windows operating system.  
   
-### Release notes of PKE-v1.2.1: <a name="release_notes"></a>
-  - Fixed decryption button bug  
+### Release notes of PKE-v2.0.0: <a name="release_notes"></a>
+  - Enhanced encryption
+  - Added documentaion
+  - Added support for special characters
+  - Added support for capital letter
+  - Changed prompts
 
 ## Installation: <a name="installation"></a>
 ### Built version <a name="built_version"></a>
