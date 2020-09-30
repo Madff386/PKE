@@ -1,11 +1,18 @@
 # Release notes:
 
+### v2.0.0
+	Enhanced encryption
+    Added documentaion
+    Added support for special characters
+    Added support for capital letter
+    Changed prompts
+	
 ### v1.2.1
-    Fixed decryption button bug
-
+	Fixed decryption button bug
+	
 ### v1.2.0
-    Loops back to welcome page
-    
+    Loops back to welcome screen
+
 ### v1.1.1
     Enlarged output text boxes
     
