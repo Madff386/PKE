@@ -1,4 +1,4 @@
-# import all reqired librarys
+# import all reqired libraries
 from tkinter import *
 from tkinter import simpledialog, messagebox
 from tkinter import ttk
