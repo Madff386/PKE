@@ -10,6 +10,7 @@
    2. [Python version](#python)
    3. [Encrypting](#encrypting)
    4. [Decrypting](#decrypting)
+4. [Contributing](#contributing)
 
 ## About: <a name="about"></a>
 The PKE program is an encryption and decryption program inspired by 
@@ -67,5 +68,6 @@ text box and press ok. After that a new text box is will appear, in here type wh
 and press ok. This will create a new window and the decrypted version of the text you entered will appear in 
 the big text box. To go back to the welcome screen, press ok, to exit the program press exit.
 
+## Contributing <a name="contributing"></a>
 
 
