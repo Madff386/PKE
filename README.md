@@ -68,4 +68,5 @@ and press ok. This will create a new window and the decrypted version of the tex
 the big text box. To go back to the welcome screen, press ok, to exit the program press exit.
 
 
+Hello
 
