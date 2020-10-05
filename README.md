@@ -15,10 +15,10 @@
 ## About: <a name="about"></a>
 The PKE program is an encryption and decryption program inspired by 
 the public key encryption protocol. It is a fairly weak encryption but 
-can be improved with a higher precision float.
+can be improved with a higher precision float.(Have you made this improvement?)
 
 It is *only* compatible with the 
-latest windows operating system.  
+latest Windows operating system.  
   
 ### Release notes of PKE-v2.0.0: <a name="release_notes"></a>
   - Enhanced encryption
@@ -37,36 +37,37 @@ under the latest release there is a space called asssests, under
 this there is a file called PKE.exe. Click on this and your download 
 will start. Once it has downloaded move it to somewhere you can easily 
 find.  
+(I would be concerned about downloading an executable file directly unless it was from a trusted origin. It may be safer to use Python version)
 
 ### Python version <a name="python_version"></a>
 To install the python or source version of the PKE program, you will 
 need python 3 installed on your computer and some space left on your hard disk. 
-Once you have this, click on the green download button on the main page, 
-then select the download zip option. This will download a zipped version of 
-the code onto your device. Next extract all the files from the zipped folder 
-into a directory that is easily acessable.
+Once you have this, click the green Download button on the main page, (maybe a screenshot would be helpful)
+then select the Download Zip option. This will download an compressed version of 
+the code onto your device. Next, extract all the files from the zipped folder 
+into a directory that is easily accessible.
 
 
 ## Usage: <a name="usage"></a>
 ### Built version  <a name="built"></a>
 To run the built version of the PKE program, after you have downloaded it double click the 
-file named PKE.exe. 
+file named PKE.exe. (Note about trusted source??)
 
 ### Python version <a name="python"></a>
 To run the source code or the python version, right click the file called PKE.py and select 
 open with. Then from the menu select python 3.
 
 ### Encrypting <a name="encrypting"></a>
-After you run the program you will be prompted with a text box. To encrypt type encrypt in that 
-text box and press ok. After that a new text box is will appear, in here type what you want to encrypt 
-and press ok. This will create a new window and the encrypted version of the text you entered will appear in 
-the big text box. To go back to the welcome screen, press ok, to exit the program press exit.
+After you run the program you will be prompted with a blank text box. To encrypt a message(text, numbers, characters)follow these 2 steps.
+1.Type the word, encrypt, in the blank text box and click OK.
+2.Type the message you wish to encrypt(text, characters, numbers etc) and click OK.
+The encrypted version of the text you entered will be displayed in a new window. To go back to the Welcome screen, click OK. To exit the program click Exit.
 
 ### Decrypting <a name="decrypting"></a>
-After you run the program you will be prompted with a text box. To decrypt type decrypt in that 
-text box and press ok. After that a new text box is will appear, in here type what you want to decrypt 
-and press ok. This will create a new window and the decrypted version of the text you entered will appear in 
-the big text box. To go back to the welcome screen, press ok, to exit the program press exit.
+After you run the program you will be prompted with a blank text box. To decrypt a message follow these 2 steps.
+1. Type the word, decrypt, in the blank text box and click OK
+2. Copy and Paste the sequencee you want to decrypt and press OK.
+The decrypted message will be displayed in a new window. To go back to the Welcome screen, press OK, to exit the program press Exit.
 
 ## Contributing <a name="contributing"></a>
 To contribute to this repository,
