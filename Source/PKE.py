@@ -224,7 +224,7 @@ def decrypt(message):   # decrypt function
     decrypted = []
     data = message.split()
     for temp in data:
-        temp = int(temp)         # splits message into listw
+        temp = int(temp)         # splits message into list
         demessage.append(temp)
     for thing in demessage:
         sep = '.'
@@ -427,83 +427,121 @@ def decrypt(message):   # decrypt function
          
     plaintext = ''.join(decrypted)       # returns decrypted message as string
     return plaintext
-    
-    
-        
 
-def get_task():
-    task = simpledialog.askstring('Task', 'Type encrypt, decrypt or exit') # creates dialog box
-    return task
 
-def get_messag():
-    messag = simpledialog.askstring('Encrypt', 'Enter what you want to encrypt: ')  # creates dialog box
-    return messag
 
-def get_message():
-    message = simpledialog.askstring('Decrypt', 'Enter what you want to decrypt: ')  # creates dialog box
-    return message
 
-def oken():
-    outen.destroy()  # destroys widow when button is press while encrypting
-    loop()
     
 
-def okde():
-    outde.destroy()  # destroys widow when button is press while decrypting
-    loop()
-
-
-
-
-def loop():   # main loop
-    task = get_task()
-    if task == 'encrypt':  # when encrypting
-        messag = get_messag()
-        encrypted = encrypt(messag)   # get message
-        global outen
-        outen = Toplevel(root)  # create window
-        outen.title('Encrypted')
-        enout = StringVar()
-        labelen = Text(outen, width=20, height=8)
-        labelen.grid(column=0, row=0, sticky=(W, E),  padx=10, pady=10, columnspan=2)   # create lable
-        encrypted = str(encrypted)
-        encrypted = encrypted.replace(',', '')
-        encrypted = encrypted.replace(']', '')   # make readable
-        encrypted = encrypted.replace('[', '')
-        labelen.insert(END, '%s' % encrypted)
-        labelen.configure(state="disabled")
-        labelen.configure(wrap="word")
-        ok = ttk.Button(outen, text='Ok', command=oken).grid(column=1, row=2, sticky=(E))
-        exit = ttk.Button(outen, text='Exit', command=root.destroy).grid(column=2, row=2, sticky=(E))   # create buttons
+def output_encrypted(encrypted):
+    global encrypted_output_window
+    encrypted_output_window = Toplevel(root)  # create window
+    encrypted_output_window.title('Encrypted')
+    encrypted_output_window.geometry('-520+120')
+    encrypted_text = StringVar()
+    encrypted_output = Text(encrypted_output_window, width=20, height=8)
+    encrypted_output.grid(column=0, row=0, sticky=(W, E),  padx=10, pady=10, columnspan=2)   # create lable
+    encrypted = str(encrypted)
+    encrypted = encrypted.replace(',', '')
+    encrypted = encrypted.replace(']', '')   # make readable
+    encrypted = encrypted.replace('[', '')
+    encrypted_output.insert(END, '%s' % encrypted)
+    encrypted_output.configure(state="disabled")
+    encrypted_output.configure(wrap="word")
+    encrypted_scrollbar = ttk.Scrollbar(encrypted_output_window, orient=VERTICAL, command=encrypted_output.yview)
+    encrypted_scrollbar.grid(column=2, row=0, sticky=(N, S, W))                         # create scrollbar
+    encrypted_output.configure(yscrollcommand=encrypted_scrollbar.set)
+    ok = ttk.Button(encrypted_output_window, text='Ok', command=encrypted_output_window.destroy)
+    ok.grid(column=1, row=2, sticky=(E), columnspan=2)
+    ok.focus()
+    ok.bind('<Return>', kill_encrypting)
+ 
+def output_decrypted(decrypted):
+    global decrypted_output_window
+    decrypted_output_window = Toplevel(root)   # create window
+    decrypted_output_window.title('Decrypted')
+    decrypted_output_window.geometry('-520+120')
+    decrypted_text = StringVar()
+    decrypted_output = Text(decrypted_output_window, width=20, height=8)
+    decrypted_output.grid(column=0, row=0, sticky=(W, E),  padx=10, pady=10, columnspan=2)  # create text box
+    decrypted = str(decrypted)
+    decrypted = decrypted.replace(',', '')
+    decrypted = decrypted.replace('~', ',')
+    decrypted = decrypted.replace(']', '')    # remove list characters
+    decrypted = decrypted.replace('[', '')
+    decrypted_output.insert(END, '%s' % decrypted)
+    decrypted_output.configure(state="disabled")   # display ouptut
+    decrypted_output.configure(wrap="word")
+    decrypted_scrollbar = ttk.Scrollbar(decrypted_output_window, orient=VERTICAL, command=decrypted_output.yview)
+    decrypted_scrollbar.grid(column=2, row=0, sticky=(N, S, W))                         # create scrollbar
+    decrypted_output.configure(yscrollcommand=decrypted_scrollbar.set)
+    ok = ttk.Button(decrypted_output_window, text='Ok', command=decrypted_output_window.destroy)
+    ok.grid(column=1, row=2, sticky=(E), columnspan=2)
+    ok.focus()
+    ok.bind('<Return>', kill_decrypting)
     
-    elif task == 'decrypt':  # when decrypting
-        message = get_message()
-        decrypted = decrypt(message)  # get message
-        global outde
-        outde = Toplevel(root)   # create window
-        outde.title('Decrypted')
-        deout = StringVar()
-        labelde = Text(outde, width=20, height=8)
-        labelde.grid(column=0, row=0, sticky=(W, E),  padx=10, pady=10)  # create text box
-        decrypted = str(decrypted)
-        decrypted = decrypted.replace(',', '')
-        decrypted = decrypted.replace('~', ',')
-        decrypted = decrypted.replace(']', '')    # remove list characters
-        decrypted = decrypted.replace('[', '')
-        labelde.insert(END, '%s' % decrypted)
-        labelde.configure(state="disabled")   # display ouptut
-        labelde.configure(wrap="word")
-        ok = ttk.Button(outde, text='Ok', command=okde).grid(column=1, row=2, sticky=(E))
-        exit = ttk.Button(outde, text='Exit', command=root.destroy).grid(column=2, row=2, sticky=(E))  #c create buttons
-    else:
-        root.destroy()  # terminate program
+
+def kill_encrypting(event):
+    encrypted_output_window.destroy()
+
+def kill_decrypting(event):
+    decrypted_output_window.destroy()
+
+
+def run():
+    error_message.set('')
+    if "~" in message_input.get('1.0', 'end') or "[" in message_input.get('1.0', 'end') or "]" in message_input.get('1.0', 'end'):
+        error_message.set('Can\'t encrypt ~ [ or ]')
+        return
+
+    if en_or_de.get() == 'encrypt':
+        encrypted = encrypt(message_input.get('1.0', 'end'))
+        output_encrypted(encrypted)
+    elif en_or_de.get() == 'decrypt':
+        message = message_input.get('1.0', 'end')
+        data = message.split()
+        for temp in data:
+            try:
+                temp = int(temp) 
+            except:
+                error_message.set('Can only decrypt numbers')
+                return
+        decrypted = decrypt(message_input.get('1.0', 'end'))
+        output_decrypted(decrypted)
+    elif en_or_de.get() == 'else':
+        error_message.set('Select encrypt or decrypt')
+        return
 
 root = Tk()
-root.withdraw()
+
+
 d = mpf(851)
 e = mpf(11)    # set keys for encryption and decryption
 p = mpf(53)
 q = mpf(61)
-loop()
-    
-root.mainloop()  
+
+error_message = StringVar()
+en_or_de = StringVar()
+en_or_de.set('else')
+root.title('Input')
+root.geometry('-500+100')
+frame = ttk.Frame(root)
+frame['padding'] = (20, 5, 20, 5)
+frame.grid(column=0, row=0, sticky=(N, E, S, W))
+encrypt_or_decrypt = ttk.Label(frame, text='Do you want to encrypt or decrypt?').grid(column=3, row=1, sticky=(N, S), pady=5, padx=5, columnspan=3)
+encrypt_radiobutton = ttk.Radiobutton(frame, text='Encrypt', variable=en_or_de, value='encrypt').grid(column=3, row=2, sticky=(W))
+decrypt_radiobutton = ttk.Radiobutton(frame, text='Decrypt', variable=en_or_de, value='decrypt').grid(column=4, row=2, sticky=(N), columnspan=2)
+ask_message = ttk.Label(frame, text='Enter the message:').grid(column=3, row=3, pady=10, columnspan=3, sticky=(N, S))
+message_input = Text(frame, width=20, height=5)
+message_input.grid(column=3, row=4, sticky=(N), padx=10, pady=10, columnspan=3)
+error = ttk.Label(frame, text='', foreground='red', textvariable=error_message)
+error.grid(column=3, row=5, columnspan=3, sticky=(N), pady=5)
+run_button = ttk.Button(frame, text='Run', command=run).grid(column=3, row=6, sticky=(E, W))
+cancel_button = ttk.Button(frame, text='Cancel', command=root.destroy).grid(column=5, row=6, sticky=(E, W))
+message_input.focus()
+
+
+
+
+
+root.mainloop() 
