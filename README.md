@@ -66,9 +66,4 @@ The encrypted version of the text you entered will be displayed in a new window.
 After you run the program you will be prompted with a blank text box. To decrypt a message follow these 2 steps.
 1. Type the word, decrypt, in the blank text box and click OK
 2. Copy and Paste the sequencee you want to decrypt and press OK.
-The decrypted message will be displayed in a new window. To go back to the Welcome screen, press OK, to exit the program press Exit.
-
-## Contributing <a name="contributing"></a>
-To contribute to this repository,
-
-Blah Blah 
+The decrypted message will be displayed in a new window. To go back to the Welcome screen, press OK, to exit the program press cancel.
