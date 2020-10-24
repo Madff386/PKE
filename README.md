@@ -16,7 +16,7 @@ The PKE program is an encryption and decryption program inspired by
 the public key encryption protocol. 
 
 It is *only* compatible with the 
-latest Windows operating system.  
+latest Windows operating system or any operating system with python 3.7.  
   
 ### Release notes of PKE-v2.0.0: <a name="release_notes"></a>
   - Enhanced encryption
