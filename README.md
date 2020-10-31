@@ -65,13 +65,10 @@ if you just want to use the default encryption key leave them blank
 your encrypted text will show up in a pop up dialog box for you to copy paste out of
 4. To close the dialog box press 'ok' and it will diapear then you can encrypt, decrypt or close the program, to close the program press 'cancel'
 
-### Decrypting <a name="decrypting"></a>
-After you run the program you will be prompted with a blank text box. To decrypt a message follow these 2 steps.
-1. Type the word, decrypt, in the blank text box and click OK
-2. Copy and Paste the sequencee you want to decrypt and press OK.
-The decrypted message will be displayed in a new window. To go back to the Welcome screen, press OK, to exit the program press Exit.
-
-## Contributing <a name="contributing"></a>
-To contribute to this repository,
-
-Blah Blah 
+### Decrypting <a name="decrypting"></a> 
+When you run the program you will be prompted with a window with a few configuration options follow these 4 steps to encrypt a message:  
+1. At the top select the decrypt radiobutton  
+2. Ignore the two small text boxes they are for encrypting
+3. Next type the message you want to decrypt in the big text box and press 'run', 
+your decrypted text will show up in a pop up dialog box for you to read
+4. To close the dialog box press 'ok' and it will diapear then you can encrypt, decrypt or close the program, to close the program press 'cancel'
