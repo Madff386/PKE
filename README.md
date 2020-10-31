@@ -50,17 +50,20 @@ into a directory that is easily accessible.
 ## Usage: <a name="usage"></a>
 ### Built version  <a name="built"></a>
 To run the built version of the PKE program, after you have downloaded it double click the 
-file named PKE.exe. 
+file named PKE-vX.X.X.exe. 
 
 ### Python version <a name="python"></a>
 To run the source code or the python version, right click the file called PKE.py and select 
 open with. Then from the menu select python 3.
 
 ### Encrypting <a name="encrypting"></a>
-After you run the program you will be prompted with a blank text box. To encrypt a message follow these 2 steps.
-1.Type the word, encrypt, in the blank text box and click OK.
-2.Type the message you wish to encrypt any character apart from [] and ~ and click OK.
-The encrypted version of the text you entered will be displayed in a new window. To go back to the Welcome screen, click OK. To exit the program click Exit.
+When you run the program you will be prompted with a window with a few configuration options follow these 4 steps to encrypt a message:  
+1. At the top select the encrypt radiobutton  
+2. Then if you want to encrypt your message with a custom encryption key, type the public key into the first box and the main key into the second, 
+if you just want to use the default encryption key leave them blank
+3. Next type your message to encrypt in the big text box and press 'run', 
+your encrypted text will show up in a pop up dialog box for you to copy paste out of
+4. To close the dialog box press 'ok' and it will diapear then you can encrypt, decrypt or close the program, to close the program press 'cancel'
 
 ### Decrypting <a name="decrypting"></a>
 After you run the program you will be prompted with a blank text box. To decrypt a message follow these 2 steps.
