@@ -10,7 +10,6 @@
    2. [Python version](#python)
    3. [Encrypting](#encrypting)
    4. [Decrypting](#decrypting)
-4. [Contributing](#contributing)
 
 ## About: <a name="about"></a>
 The PKE program is an encryption and decryption program inspired by 
