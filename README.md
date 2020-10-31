@@ -18,7 +18,7 @@ the public key encryption protocol.
 It is *only* compatible with the 
 latest Windows operating system.  
   
-### Release notes of PKE-v2.0.0: <a name="release_notes"></a>
+### Release notes of PKE-v2.1.0: <a name="release_notes"></a>
   - 
   - 
   -
