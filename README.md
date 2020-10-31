@@ -66,7 +66,7 @@ your encrypted text will show up in a pop up dialog box for you to copy paste ou
 4. To close the dialog box press 'ok' and it will diapear then you can encrypt, decrypt or close the program, to close the program press 'cancel'
 
 ### Decrypting <a name="decrypting"></a> 
-When you run the program you will be prompted with a window with a few configuration options follow these 4 steps to encrypt a message:  
+When you run the program you will be prompted with a window with a few configuration options follow these 4 steps to decrypt a message:  
 1. At the top select the decrypt radiobutton  
 2. Ignore the two small text boxes they are for encrypting
 3. Next type the message you want to decrypt in the big text box and press 'run', 
