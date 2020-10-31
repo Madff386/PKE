@@ -16,7 +16,7 @@ The PKE program is an encryption and decryption program inspired by
 the public key encryption protocol. 
 
 It is *only* compatible with the 
-latest Windows operating system.  
+latest Windows operating system or any operating system with python 3.7.  
   
 ### Release notes of PKE-v2.1.0: <a name="release_notes"></a>
   - 
@@ -62,6 +62,7 @@ if you just want to use the default encryption key leave them blank
 your encrypted text will show up in a pop up dialog box for you to copy paste out of
 4. To close the dialog box press 'ok' and it will diapear then you can encrypt, decrypt or close the program, to close the program press 'cancel'
 
+
 ### Decrypting <a name="decrypting"></a> 
 When you run the program you will be prompted with a window with a few configuration options follow these 4 steps to decrypt a message:  
 1. At the top select the decrypt radiobutton  
@@ -69,3 +70,4 @@ When you run the program you will be prompted with a window with a few configura
 3. Next type the message you want to decrypt in the big text box and press 'run', 
 your decrypted text will show up in a pop up dialog box for you to read
 4. To close the dialog box press 'ok' and it will diapear then you can encrypt, decrypt or close the program, to close the program press 'cancel'
+The decrypted message will be displayed in a new window. To go back to the Welcome screen, press OK, to exit the prog
