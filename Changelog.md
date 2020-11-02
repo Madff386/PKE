@@ -1,5 +1,11 @@
 # Changelog:
 
+### v2.1.0
+    Added scrollbar to output
+    Combined input to single window
+    Changed output to pop up dialog box
+    Added custom encryption keys
+
 ### v2.0.0
 	Enhanced encryption
     Added documentaion
