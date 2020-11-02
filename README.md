@@ -19,9 +19,10 @@ It is *only* compatible with the
 latest Windows operating system or any operating system with python 3.7.  
   
 ### Release notes of PKE-v2.1.0: <a name="release_notes"></a>
-  - 
-  - 
-  -
+  - Added scrollbar to output
+  - Combined input to single window
+  - Changed output to pop up dialog box
+  - Added custom encryption keys
 
 ## Installation: <a name="installation"></a>
 ### Built version <a name="built_version"></a>
