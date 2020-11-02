@@ -18,12 +18,11 @@ the public key encryption protocol.
 It is *only* compatible with the 
 latest Windows operating system or any operating system with python 3.7.  
   
-### Release notes of PKE-v2.0.0: <a name="release_notes"></a>
-  - Enhanced encryption
-  - Added documentaion
-  - Added support for special characters
-  - Added support for capital letter
-  - Changed prompts
+### Release notes of PKE-v2.1.0: <a name="release_notes"></a>
+  - Added scrollbar to output
+  - Combined input to single window
+  - Changed output to pop up dialog box
+  - Added custom encryption keys
 
 ## Installation: <a name="installation"></a>
 ### Built version <a name="built_version"></a>
@@ -49,20 +48,27 @@ into a directory that is easily accessible.
 ## Usage: <a name="usage"></a>
 ### Built version  <a name="built"></a>
 To run the built version of the PKE program, after you have downloaded it double click the 
-file named PKE.exe. 
+file named PKE-vX.X.X.exe. 
 
 ### Python version <a name="python"></a>
 To run the source code or the python version, right click the file called PKE.py and select 
 open with. Then from the menu select python 3.
 
 ### Encrypting <a name="encrypting"></a>
-After you run the program you will be prompted with a blank text box. To encrypt a message follow these 2 steps.
-1.Type the word, encrypt, in the blank text box and click OK.
-2.Type the message you wish to encrypt any character apart from [] and ~ and click OK.
-The encrypted version of the text you entered will be displayed in a new window. To go back to the Welcome screen, click OK. To exit the program click Exit.
+When you run the program you will be prompted with a window with a few configuration options follow these 4 steps to encrypt a message:  
+1. At the top select the encrypt radiobutton  
+2. Then if you want to encrypt your message with a custom encryption key, type the public key into the first box and the main key into the second, 
+if you just want to use the default encryption key leave them blank
+3. Next type your message to encrypt in the big text box and press 'run', 
+your encrypted text will show up in a pop up dialog box for you to copy paste out of
+4. To close the dialog box press 'ok' and it will diapear then you can encrypt, decrypt or close the program, to close the program press 'cancel'
 
-### Decrypting <a name="decrypting"></a>
-After you run the program you will be prompted with a blank text box. To decrypt a message follow these 2 steps.
-1. Type the word, decrypt, in the blank text box and click OK
-2. Copy and Paste the sequencee you want to decrypt and press OK.
-The decrypted message will be displayed in a new window. To go back to the Welcome screen, press OK, to exit the program press cancel.
+
+### Decrypting <a name="decrypting"></a> 
+When you run the program you will be prompted with a window with a few configuration options follow these 4 steps to decrypt a message:  
+1. At the top select the decrypt radiobutton  
+2. Ignore the two small text boxes they are for encrypting
+3. Next type the message you want to decrypt in the big text box and press 'run', 
+your decrypted text will show up in a pop up dialog box for you to read
+4. To close the dialog box press 'ok' and it will diapear then you can encrypt, decrypt or close the program, to close the program press 'cancel'
+The decrypted message will be displayed in a new window. To go back to the Welcome screen, press OK, to exit the prog
