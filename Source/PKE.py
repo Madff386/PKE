@@ -199,14 +199,20 @@ def encrypt(message):   # encrypt function
         
 
         
-    for thing in emessage:    
+    for thing in emessage:  
+        if e_key_input.get() != '' and pq_key_input.get != '':
+            encyption_key = int(e_key_input.get())
+            main_key = int(pq_key_input.get())
+        else:
+            encyption_key = e
+            main_key = p*q
         sep = '.'
-        quotent = (thing**e)/(p*q)   # compute quotent
+        quotent = (thing**encyption_key)/(main_key)   # compute quotent
         rquotent = str(quotent)
         r = rquotent.split(sep, 1)[1]   #[
         r = ("0." + r)
         r = mpf(r)                      
-        t = float(r)*(p*q)
+        t = float(r)*(main_key)
         t = t*100000
         t = str(t)
         t = t.split(sep, 1)[0] 
@@ -512,6 +518,7 @@ def run():
         error_message.set('Select encrypt or decrypt')
         return
 
+
 root = Tk()
 
 
@@ -519,10 +526,11 @@ d = mpf(851)
 e = mpf(11)    # set keys for encryption and decryption
 p = mpf(53)
 q = mpf(61)
-
 error_message = StringVar()
 en_or_de = StringVar()
 en_or_de.set('else')
+e_key = StringVar()
+pq_key = StringVar()
 root.title('Input')
 root.geometry('-500+100')
 frame = ttk.Frame(root)
@@ -530,17 +538,19 @@ frame['padding'] = (20, 5, 20, 5)
 frame.grid(column=0, row=0, sticky=(N, E, S, W))
 encrypt_or_decrypt = ttk.Label(frame, text='Do you want to encrypt or decrypt?').grid(column=3, row=1, sticky=(N, S), pady=5, padx=5, columnspan=3)
 encrypt_radiobutton = ttk.Radiobutton(frame, text='Encrypt', variable=en_or_de, value='encrypt').grid(column=3, row=2, sticky=(W))
-decrypt_radiobutton = ttk.Radiobutton(frame, text='Decrypt', variable=en_or_de, value='decrypt').grid(column=4, row=2, sticky=(N), columnspan=2)
-ask_message = ttk.Label(frame, text='Enter the message:').grid(column=3, row=3, pady=10, columnspan=3, sticky=(N, S))
+decrypt_radiobutton = ttk.Radiobutton(frame, text='Decrypt', variable=en_or_de, value='decrypt').grid(column=5, row=2, sticky=(N), columnspan=2)
+ask_message = ttk.Label(frame, text='Enter the message:').grid(column=3, row=4, pady=10, columnspan=3, sticky=(N, S))
+e_key_input = ttk.Entry(frame, textvariable='e_key', width=5)
+e_key_input.grid(column=3, row=3, padx=10, pady=5, sticky=(E, W)) 
+pq_key_input = ttk.Entry(frame, textvariable='pq_key', width=5)
+pq_key_input.grid(column=5, row=3, padx=10, pady=5, sticky=(E, W)) 
 message_input = Text(frame, width=20, height=5)
-message_input.grid(column=3, row=4, sticky=(N), padx=10, pady=10, columnspan=3)
+message_input.grid(column=3, row=5, sticky=(N), padx=10, pady=10, columnspan=3)
 error = ttk.Label(frame, text='', foreground='red', textvariable=error_message)
-error.grid(column=3, row=5, columnspan=3, sticky=(N), pady=5)
-run_button = ttk.Button(frame, text='Run', command=run).grid(column=3, row=6, sticky=(E, W))
-cancel_button = ttk.Button(frame, text='Cancel', command=root.destroy).grid(column=5, row=6, sticky=(E, W))
+error.grid(column=3, row=6, columnspan=3, sticky=(N), pady=5)
+run_button = ttk.Button(frame, text='Run', command=run).grid(column=3, row=7, sticky=(E, W))
+cancel_button = ttk.Button(frame, text='Cancel', command=root.destroy).grid(column=5, row=7, sticky=(E, W))
 message_input.focus()
-
-
 
 
 
