@@ -71,4 +71,3 @@ When you run the program you will be prompted with a window with a few configura
 3. Next type the message you want to decrypt in the big text box and press 'run', 
 your decrypted text will show up in a pop up dialog box for you to read
 4. To close the dialog box press 'ok' and it will diapear then you can encrypt, decrypt or close the program, to close the program press 'cancel'
-The decrypted message will be displayed in a new window. To go back to the Welcome screen, press OK, to exit the prog
