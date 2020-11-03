@@ -2,9 +2,11 @@ import os
 
 
 def find_d(p,q,e):
-    for i = 1:10
-        if 
-
+    for i = 1:1000
+        if e*i % ((p-1)*(q-1)) == 1:
+            D = i 
+            Return D
+            Break
 
 
 
@@ -22,4 +24,4 @@ Q = rand pq list
 
 E = rand e list
 
-D = find d(p,q,e)
+D = find_d(p,q,e)
